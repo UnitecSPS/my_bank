@@ -1,0 +1,30 @@
+
+= render partial: "shared/print_errors", locals: {obj: @client}
+
+= form_for @client do |f|
+
+  .field
+    = f.label :identity, "Identidad"
+    = f.text_field :identity
+
+  .field
+    = f.label :name, "Nombre"
+    = f.text_field :name
+
+  .field
+    = f.label :phone, "Telefono"
+    = f.telephone_field :phone
+
+  .field
+    = f.label :email
+    = f.email_field :email
+
+  .field
+    = f.radio_button :gender, "Masculino"
+    = f.label :gender, "Masculino"
+    %br
+    = f.radio_button :gender, "Femenino"
+    = f.label :gender, "Fememino"
+
+  .field
+    = f.submit

@@ -1,0 +1,19 @@
+%h1 Clientes
+%p Listado de clientes de nuestro banco
+
+- if flash[:notice].present?
+  .notice= flash[:notice]
+
+- if @clients.any?
+  %table{border: "1"}
+    %tr
+      %th Identidad
+      %th Nombre
+      %th Cantidad de Cuentas
+    = render @clients
+- else
+  %em No Hay ningun cliente agredo
+
+%br
+
+= link_to "Nuevo Cliente", new_client_path
