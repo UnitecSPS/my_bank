@@ -2,14 +2,12 @@
 
 one:
   balance: 9.99
-  type_account: MyString
-  rate: 9.99
   currency: MyString
   client_id: 
+  account_type_id: 
 
 two:
   balance: 9.99
-  type_account: MyString
-  rate: 9.99
   currency: MyString
   client_id: 
+  account_type_id: 

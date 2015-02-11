@@ -1,0 +1,11 @@
+%h1 Tipos de Cuenta
+%p Listado de tipos de cuenta que el banco soporta
+
+%table{border: "1"}
+  %tr
+    %th Titulo
+    %th Rate
+    %th Minimo Deposito Requerido
+  = render @types
+%br
+= link_to "Nuevo Tipo", new_account_type_path

@@ -5,7 +5,7 @@ MyBank::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  resources :clients
+  resources :clients, :account_types
 
   resources :bank_accounts
 

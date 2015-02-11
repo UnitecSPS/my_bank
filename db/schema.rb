@@ -11,18 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150210011139) do
+ActiveRecord::Schema.define(version: 20150211014550) do
 
-  create_table "bank_accounts", force: true do |t|
-    t.decimal  "balance"
-    t.string   "type_account"
+  create_table "account_types", force: true do |t|
+    t.string   "title"
     t.decimal  "rate"
-    t.string   "currency"
-    t.integer  "client_id"
+    t.decimal  "min_deposit"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "bank_accounts", force: true do |t|
+    t.decimal  "balance"
+    t.string   "currency"
+    t.integer  "client_id"
+    t.integer  "account_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "bank_accounts", ["account_type_id"], name: "index_bank_accounts_on_account_type_id"
   add_index "bank_accounts", ["client_id"], name: "index_bank_accounts_on_client_id"
 
   create_table "clients", force: true do |t|
