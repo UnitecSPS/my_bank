@@ -1,0 +1,19 @@
+
+= render partial: "shared/print_errors", locals: {obj: @bank_account}
+
+= form_for @bank_account do |f|
+
+  .field
+    = f.label :client_id, "Cliente"
+    = f.collection_select :client_id, Client.order(:name), :id, :name
+
+  .field
+    = f.label :account_type_id, "Tipo Cuenta"
+    = f.collection_select :account_type_id, AccountType.order(:title), :id, :title
+
+  .field
+    = f.label :currency, "Moneda"
+    = f.select :currency, ["Lempiras", "Dolares"]
+
+  .field
+    = f.submit

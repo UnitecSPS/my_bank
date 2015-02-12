@@ -1,0 +1,13 @@
+%h1= @bank_account.id
+%p
+  %strong Cliente
+  = @bank_account.client.name
+%p
+  %strong Tipo
+  = @bank_account.account_type.title
+%p
+  %strong Moneda
+  = @bank_account.currency
+%p
+  %strong Saldo
+  = @bank_account.balance

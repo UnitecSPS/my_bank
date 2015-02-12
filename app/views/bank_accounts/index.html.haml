@@ -1,0 +1,20 @@
+%h1 Listado de Cuentas
+%p Las cuentas bancarias del banco
+
+- if flash[:notice].present?
+  .notice= flash[:notice]
+
+- if @bank_accounts.any?
+  %table{border: "1"}
+    %tr
+      %th ID
+      %th Cliente
+      %th Saldo
+      %th Tipo
+    = render @bank_accounts
+- else
+  %em No Hay ninguna cuenta bancaria agregada
+
+%br
+
+= link_to "Nueva Cuenta", new_bank_account_path
