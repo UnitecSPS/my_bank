@@ -23,6 +23,13 @@ class BankAccountsController < ApplicationController
     end
   end
 
+  def preview
+    @bank_account = BankAccount.find(params[:id])
+  end
+
+  def stadistics
+  end
+
   private
 
     def bank_account_params

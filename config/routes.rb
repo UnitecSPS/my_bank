@@ -5,9 +5,14 @@ MyBank::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  resources :clients, :account_types
+  resources :clients
+  resources :account_types, except: [:show, :destroy]
 
-  resources :bank_accounts
+  resources :bank_accounts, only: [:index, :new, :create, :show] do
+    resources :transactions, shallow: true
+    get "report", on: :member
+    get "stadistics", on: :collection
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
