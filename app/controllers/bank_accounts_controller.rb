@@ -13,7 +13,6 @@ class BankAccountsController < ApplicationController
 
   def create
     @bank_account = BankAccount.new(bank_account_params)
-    @bank_account.balance = @bank_account.account_type.min_deposit
 
     if @bank_account.save
       redirect_to bank_accounts_path,

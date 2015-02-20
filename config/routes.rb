@@ -5,7 +5,9 @@ MyBank::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  resources :clients
+  resources :clients do
+    get "hackaccounts", on: :member
+  end
   resources :account_types, except: [:show, :destroy]
 
   resources :bank_accounts, only: [:index, :new, :create, :show] do

@@ -1,0 +1,14 @@
+%p ESTOY EN HACK!
+= form_for @client do |f|
+  %table{border: "1"}
+    %tr
+      %th Currency
+      %th Tipo
+      %th Saldo
+    = f.fields_for :bank_accounts do |fb|
+      %tr
+        %th= fb.object.currency
+        %th= fb.object.account_type.title#fb.collection_select :account_type_id, AccountType.order(:title), :id, :title
+        %th= fb.number_field :balance
+  %br
+  = f.submit

@@ -37,10 +37,14 @@ class ClientsController < ApplicationController
     end
   end
 
+  def hackaccounts
+    @client = Client.find(params[:id])
+  end
+
   private
 
   	def client_params
   		params.require(:client).permit(:name,:identity,
-  			:phone, :email)
+  			:phone, :email, bank_accounts_attributes: [:id,:account_type_id,:balance] )
   	end
 end
