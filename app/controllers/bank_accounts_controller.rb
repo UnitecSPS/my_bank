@@ -29,6 +29,16 @@ class BankAccountsController < ApplicationController
   def stadistics
   end
 
+  def deposit
+    @bank_account = BankAccount.find(params[:id])
+    @transaction = Transaction.new(transaction_type: "deposit")
+  end
+
+  def retire
+    @bank_account = BankAccount.find(params[:id])
+    @transaction = Transaction.new(transaction_type: "retire")
+  end
+
   private
 
     def bank_account_params

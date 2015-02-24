@@ -10,7 +10,11 @@ class BankAccount < ActiveRecord::Base
 
   def self.currency_available_for_select
     ["Lempiras", "Dolares"]
-  end 
+  end
+
+  def full_description
+    [id, client.name, account_type.title].join(" - ")
+  end
 
   private
 

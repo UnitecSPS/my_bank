@@ -11,3 +11,9 @@
 %p
   %strong Saldo
   = @bank_account.balance
+
+%table
+  %tr
+    %td= link_to "Lista de Transacciones", "#"
+    %td= link_to "Depositar", deposit_bank_account_path(@bank_account, transaction_type: "deposit")
+    %td= link_to "Retirar", retire_bank_account_path(@bank_account, transaction_type: "retire")
