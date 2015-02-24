@@ -1,0 +1,12 @@
+%h1 Listado de Transacciones Para Cuenta:
+%h2= link_to @bank_account.full_description, @bank_account
+
+%table{border: "1"}
+  %tr
+    %th ID
+    %th Tipo
+    %th Responsable
+    %th Descripción
+    %th Monto
+    %th Fecha
+  = render @transactions

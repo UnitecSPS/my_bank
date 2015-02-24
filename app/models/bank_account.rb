@@ -16,6 +16,22 @@ class BankAccount < ActiveRecord::Base
     [id, client.name, account_type.title].join(" - ")
   end
 
+  def deposit(amount)
+    if amount.present?
+      self.balance += amount
+      save
+    end
+  end
+
+  def retire(amount)
+    if amount.present? && self.balance > amount
+      self.balance -= amount
+      save
+    else
+      false
+    end
+  end
+
   private
 
     def call_before_safe

@@ -11,7 +11,7 @@ MyBank::Application.routes.draw do
   resources :account_types, except: [:show, :destroy]
 
   resources :bank_accounts, only: [:index, :new, :create, :show] do
-    resources :transactions, only: [:create], shallow: true
+    resources :transactions, only: [:index, :create], shallow: true
     get "deposit" => "transactions#new", on: :member
     get "retire"=> "transactions#new", on: :member
     get "stadistics", on: :collection
