@@ -20,6 +20,8 @@ class BankAccount < ActiveRecord::Base
     if amount.present?
       self.balance += amount
       save
+    else
+      false
     end
   end
 

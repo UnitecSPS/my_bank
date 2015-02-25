@@ -22,4 +22,8 @@ class Transaction < ActiveRecord::Base
   def decorate_amount
     "Lps. #{amount}"
   end
+
+  def decorate_created_at
+    created_at.strftime("%A, %B %d, %Y %l:%M %p")
+  end
 end
