@@ -1,4 +1,14 @@
-%h1 Nueva Cuenta
-%p Agregar una nueva cuenta
+= render "submenu"
 
-= render "form"
+.center_content
+  #right_wrap
+    #right_content
+
+      %h2 Agregar Nueva Cuenta
+      = render "form"
+
+  .sidebar{id: "sidebar"}
+    %h2 Cuenta Nueva
+    .sidebar_section_text Ingresar los datos requeridos para poder crear una nueva cuenta bancaria.
+
+  .clear

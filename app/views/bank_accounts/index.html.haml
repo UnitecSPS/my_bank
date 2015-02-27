@@ -1,21 +1,27 @@
-%h1 Listado de Cuentas
-%p Las cuentas bancarias del banco
+= render "submenu"
 
-- if flash[:notice].present?
-  .notice= flash[:notice]
+.center_content
+  #right_wrap
+    #right_content
+      %h2 Cuentas Bancarias
 
-- if @bank_accounts.any?
-  %table{border: "1"}
-    %tr
-      %th ID
-      %th Cliente
-      %th Saldo
-      %th Tipo
-    = render @bank_accounts
-- else
-  %em No Hay ninguna cuenta bancaria agregada
+      - if flash[:notice].present?
+        .notice= flash[:notice]
 
-%br
+      - if @bank_accounts.any?
+        %table{id:"rounded-corner",border: "1"}
+          %thead
+            %tr
+              %th ID
+              %th Cliente
+              %th Saldo
+              %th Tipo
+          %tbody
+            = render @bank_accounts
+      - else
+        %em No Hay ninguna cuenta bancaria agregada
+  .sidebar{id: "sidebar"}
+    %h2 Administracion de Cuentas Bancarias
+    .sidebar_section_text Listado de cuentas bancarias agregadas al banco.
 
-= link_to "Nueva Cuenta", new_bank_account_path
-= show_test
+  .clear

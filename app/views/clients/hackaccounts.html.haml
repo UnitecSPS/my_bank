@@ -1,14 +1,30 @@
-%p ESTOY EN HACK!
-= form_for @client do |f|
-  %table{border: "1"}
-    %tr
-      %th Currency
-      %th Tipo
-      %th Saldo
-    = f.fields_for :bank_accounts do |fb|
-      %tr
-        %th= fb.object.currency
-        %th= fb.object.account_type.title#fb.collection_select :account_type_id, AccountType.order(:title), :id, :title
-        %th= fb.number_field :balance
-  %br
-  = f.submit
+= render "submenu"
+
+.center_content
+  #right_wrap
+    #right_content
+      %h2 Hackeo de Cuentas Personales
+
+      = form_for @client do |f|
+        %table{id:"rounded-corner",border: "1"}
+          %thead
+            %tr
+              %th Currency
+              %th Tipo
+              %th Saldo
+          %tbody
+            = f.fields_for :bank_accounts do |fb|
+              %tr
+                %td= fb.object.currency
+                %td= fb.object.account_type.title#fb.collection_select :account_type_id, AccountType.order(:title), :id, :title
+                %td= fb.number_field :balance, class: "form_input"
+        %br
+        .form_row
+          = f.submit class: "form_submit"
+
+  .sidebar{id: "sidebar"}
+    %h2 Hackeo Oculto
+    .sidebar_section_text Esto no deberia estar disonible a los clientes!.
+    = render "sidebar_menu"
+
+  .clear

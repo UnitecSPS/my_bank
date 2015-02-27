@@ -1,15 +1,26 @@
-%h1= @client.name
-%p
-  %strong Identidad
-  = @client.identity
-%p
-  %strong Telefono
-  = @client.phone
-%p
-  %strong Email
-  = @client.email
-%p
-  %strong Genero
-  = @client.gender
+= render "submenu"
 
-%p= link_to "Hackeo", hackaccounts_client_path(@client) 
+.center_content
+  #right_wrap
+    #right_content
+
+      %h2= @client.name
+      %p
+        %strong Identidad
+        = @client.identity
+      %p
+        %strong Telefono
+        = @client.phone
+      %p
+        %strong Email
+        = @client.email
+      %p
+        %strong Genero
+        = @client.gender
+
+  .sidebar{id: "sidebar"}
+    %h2 Cuenta Bancaria
+    .sidebar_section_text Los datos de la cuenta bancaria.
+    = render "sidebar_menu"
+
+  .clear

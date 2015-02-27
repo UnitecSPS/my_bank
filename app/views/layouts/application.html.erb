@@ -11,18 +11,18 @@
 <div id="panelwrap">
   <div class="header">
     <div class="title">My Bank Software</div>
-    
+
     <div class="header_right">Welcome USER,<a href="#" class="logout">Logout</a> </div>
-    
+
     <div class="menu">
     <ul>
       <li><%= link_to "HOME", root_path %></li>
       <li><%= link_to "CLIENTES", clients_path %></li>
-      <li><%= link_to "TIPOS DE CUENTA", account_types_path %></li>
       <li><%= link_to "CUENTAS", bank_accounts_path %></li>
+      <li><%= link_to "TIPOS DE CUENTA", account_types_path %></li>
     </ul>
     </div>
-    
+
   </div>
 
   <%= yield %>

@@ -1,3 +1,14 @@
-%h1 Agregar Cliente nuevo
-%p Ingresa los datos del cliente nuevo
-= render "form"
+= render "submenu"
+
+.center_content
+  #right_wrap
+    #right_content
+
+      %h2 Agregar Cliente nuevo
+      = render "form"
+
+  .sidebar{id: "sidebar"}
+    %h2 Cliente Nuevo
+    .sidebar_section_text Ingresar los datos requeridos para poder crear un nuevo cliente.
+
+  .clear

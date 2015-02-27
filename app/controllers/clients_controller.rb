@@ -15,7 +15,7 @@ class ClientsController < ApplicationController
     @client = Client.new(client_params)
 
     if @client.save
-      redirect_to clients_path, 
+      redirect_to clients_path,
         flash: {notice: "Cliente creado exitosamente"}
     else
       render :new
@@ -30,7 +30,7 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
 
     if @client.update(client_params)
-      redirect_to clients_path, 
+      redirect_to clients_path,
         flash: {notice: "Cliente editado exitosamente"}
     else
       render :edit
@@ -44,7 +44,7 @@ class ClientsController < ApplicationController
   private
 
   	def client_params
-  		params.require(:client).permit(:name,:identity,
+  		params.require(:client).permit(:name,:identity, :gender,
   			:phone, :email, bank_accounts_attributes: [:id,:account_type_id,:balance] )
   	end
 end

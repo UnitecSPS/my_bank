@@ -1,14 +1,16 @@
 = render partial: "shared/print_errors", locals: { obj: @type }
 
-= form_for @type do |f|
-  .field
-    = f.label :title, "Titulo"
-    = f.text_field :title
-  .field
-    = f.label :rate
-    = f.number_field :rate
-  .field
-    = f.label :min_deposit
-    = f.number_field :min_deposit
-  .field
-    = f.submit
+.form
+
+  = form_for @type do |f|
+    .form_row
+      = f.label :title, "Titulo"
+      = f.text_field :title, class: "form_input"
+    .form_row
+      = f.label :rate
+      = f.number_field :rate, class: "form_input"
+    .form_row
+      = f.label :min_deposit
+      = f.number_field :min_deposit, class: "form_input"
+    .form_row
+      = f.submit class: "form_submit"

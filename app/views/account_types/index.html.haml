@@ -1,11 +1,21 @@
-%h1 Tipos de Cuenta
-%p Listado de tipos de cuenta que el banco soporta
+= render "submenu"
 
-%table{border: "1"}
-  %tr
-    %th Titulo
-    %th Rate
-    %th Minimo Deposito Requerido
-  = render @types
-%br
-= link_to "Nuevo Tipo", new_account_type_path
+.center_content
+  #right_wrap
+    #right_content
+      %h2 Listado de Tipos
+
+      %table{id:"rounded-corner",border: "1"}
+        %thead
+          %tr
+            %th Titulo
+            %th Rate
+            %th Minimo Deposito Requerido
+        %tbody
+          = render @types
+
+  .sidebar{id: "sidebar"}
+    %h2 Tipos de Cuenta Bancaria
+    .sidebar_section_text Listado de Tipos con los que se puede crear una cuenta bancaria para especificar su tasa de intereses y el deposito minimo requerido por el cliente.
+
+  .clear

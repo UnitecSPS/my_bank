@@ -1,19 +1,26 @@
-%h1= @bank_account.id
-%p
-  %strong Cliente
-  = @bank_account.client.name
-%p
-  %strong Tipo
-  = @bank_account.account_type.title
-%p
-  %strong Moneda
-  = @bank_account.currency
-%p
-  %strong Saldo
-  = @bank_account.balance
+= render "submenu"
 
-%table
-  %tr
-    %td= link_to "Lista de Transacciones", bank_account_transactions_path(@bank_account)
-    %td= link_to "Depositar", deposit_bank_account_path(@bank_account, transaction_type: "deposit")
-    %td= link_to "Retirar", retire_bank_account_path(@bank_account, transaction_type: "retire")
+.center_content
+  #right_wrap
+    #right_content
+
+      %h2= "Código: #{@bank_account.id}"
+      %p
+        %strong Cliente
+        = @bank_account.client.name
+      %p
+        %strong Tipo
+        = @bank_account.account_type.title
+      %p
+        %strong Moneda
+        = @bank_account.currency
+      %p
+        %strong Saldo
+        = @bank_account.balance
+
+  .sidebar{id: "sidebar"}
+    %h2 Cliente
+    .sidebar_section_text Los datos del cliente.
+    = render "sidebar_menu"
+
+  .clear
