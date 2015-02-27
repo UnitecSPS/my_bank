@@ -6,7 +6,6 @@
   #right_wrap
     #right_content
       %h2 Clientes
-      %p Listado de clientes de nuestro banco
 
       - if flash[:notice].present?
         .notice= flash[:notice]
@@ -22,3 +21,11 @@
             = render @clients
       - else
         %em No Hay ningun cliente agredo
+  .sidebar{id: "sidebar"}
+    %h2 Administracion de usuarios
+    .sidebar_section_text Listado de clientes para que puedas agregar nuevos u editar existentes.
+
+  .clear
+
+
+
