@@ -1,3 +1,14 @@
-%h1= @type.titleize
-%h2= @bank_account.full_description
-= render "form"
+= render "bank_accounts/submenu"
+
+.center_content
+  #right_wrap
+    #right_content
+
+      %h2= @type.titleize
+      = render "form"
+
+  .sidebar{id: "sidebar"}
+    %h2 Nueva Transaccion
+    .sidebar_section_text Ingresar los datos requeridos para la transaccion.
+
+  .clear

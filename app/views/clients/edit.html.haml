@@ -1,5 +1,15 @@
-%h1 Editar Cliente
-%p Edita los datos del cliente
-= render "form"
-%br
-= link_to "Desactivar Cliente", "#"
+= render "submenu"
+
+.center_content
+  #right_wrap
+    #right_content
+
+      %h2= @client.name
+      = render "form"
+
+  .sidebar{id: "sidebar"}
+    %h2 Editar Cliente
+    .sidebar_section_text Pantalla de edicion para poder modificar todos los datos de un client existente.
+    = render "sidebar_menu"
+
+  .clear

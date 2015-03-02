@@ -1,19 +1,29 @@
-%h1 Clientes
-%p Listado de clientes de nuestro banco
+= render "submenu"
 
-- if flash[:notice].present?
-  .notice= flash[:notice]
+.center_content
+  #right_wrap
+    #right_content
+      %h2 Clientes
 
-- if @clients.any?
-  %table{border: "1"}
-    %tr
-      %th Identidad
-      %th Nombre
-      %th Cantidad de Cuentas
-    = render @clients
-- else
-  %em No Hay ningun cliente agredo
+      - if flash[:notice].present?
+        .notice= flash[:notice]
 
-%br
+      - if @clients.any?
+        %table{id:"rounded-corner",border: "1"}
+          %thead
+            %tr
+              %th Identidad
+              %th Nombre
+              %th Cantidad de Cuentas
+          %tbody
+            = render @clients
+      - else
+        %em No Hay ningun cliente agredo
+  .sidebar{id: "sidebar"}
+    %h2 Administracion de usuarios
+    .sidebar_section_text Listado de clientes para que puedas agregar nuevos u editar existentes.
 
-= link_to "Nuevo Cliente", new_client_path
+  .clear
+
+
+

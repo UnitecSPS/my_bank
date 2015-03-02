@@ -1,12 +1,24 @@
-%h1 Listado de Transacciones Para Cuenta:
-%h2= link_to @bank_account.full_description, @bank_account
+= render "bank_accounts/submenu"
 
-%table{border: "1"}
-  %tr
-    %th ID
-    %th Tipo
-    %th Responsable
-    %th Descripción
-    %th Monto
-    %th Fecha
-  = render @transactions
+.center_content
+  #right_wrap
+    #right_content
+      %h2 Listado de Transacciones
+
+      %table{id:"rounded-corner",border: "1"}
+        %thead
+          %tr
+            %th ID
+            %th Tipo
+            %th Responsable
+            %th Descripción
+            %th Monto
+            %th Fecha
+        %tbody
+          = render @transactions
+
+  .sidebar{id: "sidebar"}
+    %h2 Cuenta Bancaria
+    .sidebar_section_text= link_to @bank_account.full_description, @bank_account
+
+  .clear

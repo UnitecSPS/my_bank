@@ -1,18 +1,19 @@
 = render partial: "shared/print_errors", locals: {obj: @transaction}
 
-= form_for [@bank_account, @transaction] do |f|
-  .field
-    = f.label :responsible, "Responsable"
-    = f.text_field :responsible
+.form
+  = form_for [@bank_account, @transaction] do |f|
+    .form_row
+      = f.label :responsible, "Responsable"
+      = f.text_field :responsible, class: "form_input"
 
-  .field
-    = f.label :amount
-    = f.number_field :amount
+    .form_row
+      = f.label :amount
+      = f.number_field :amount, class: "form_input"
 
-  .field
-    = f.label :description, "Descripcion"
-    = f.text_area :description
+    .form_row
+      = f.label :description, "Descripcion"
+      = f.text_area :description, class: "form_textarea"
 
-  .field
-    = f.hidden_field :transaction_type
-    = f.submit @type == "deposit" ? "Depositar" : "Retirar"
+    .form_row
+      = f.hidden_field :transaction_type
+      = f.submit @type == "deposit" ? "Depositar" : "Retirar", class: "form_submit"

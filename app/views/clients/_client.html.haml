@@ -1,4 +1,4 @@
-%tr
+%tr.odd
   %td= link_to client.identity, client
   %td= client.name
-  %td 0
+  %td= client.bank_accounts.count
