@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213014807) do
+ActiveRecord::Schema.define(version: 20150303012220) do
 
   create_table "account_types", force: true do |t|
     t.string   "title"
@@ -56,5 +56,13 @@ ActiveRecord::Schema.define(version: 20150213014807) do
   end
 
   add_index "transactions", ["bank_account_id"], name: "index_transactions_on_bank_account_id"
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

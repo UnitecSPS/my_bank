@@ -17,6 +17,9 @@ MyBank::Application.routes.draw do
     get "stadistics", on: :collection
   end
 
+  get "/login" => "sessions#new"#, as: :patito
+  post "/login" => "sessions#create"
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
