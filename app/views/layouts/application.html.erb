@@ -12,7 +12,9 @@
   <div class="header">
     <div class="title">My Bank Software</div>
 
-    <div class="header_right">Welcome USER,<a href="#" class="logout">Logout</a> </div>
+    <div class="header_right">
+      <%= current_user.try(:email) %>,<%= link_to "Logout", logout_path, method: :delete, class: "logout" %>
+    </div>
 
     <div class="menu">
     <ul>

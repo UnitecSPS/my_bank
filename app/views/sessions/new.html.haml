@@ -1,16 +1,18 @@
-.center_content
-  #right_wrap
-    #right_content
-      %h2 Login
+#middleleftPan
+  %h2 Please Login
+  %p Please enter your credentials fo the page
+  - if flash[:notice].present?
+    %p
+      .notice= flash[:notice]
 
-      .form
-        = form_for :session, url: login_path do |f|
-          .form_row
-            = f.label :password
-            = f.password_field :password, class: "form_input"
-          .fom_row
-            = f.submit "Login", class: "form_submit"
-
-  .sidebar{id: "sidebar"}
-    %h2 Autenticar
-    .sidebar_section_text Por favor ingresa tus credenciales validos.
+#middlerightPan
+  = form_for :session, url: login_path do |f|
+    %h2 User Login
+    .form_row
+      = f.label :email
+      = f.email_field :email
+    .form_row
+      = f.label :password
+      = f.password_field :password
+    #register
+    = f.submit "Login", class: "button"

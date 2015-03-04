@@ -12,17 +12,18 @@
   <%= image_tag("logo.gif") %>
 	<ul>
 		<li><%= link_to "HOME", root_path %></li>
-		<li><%= link_to "CLIENTES", clients_path %></li>
-    <li><%= link_to "TIPOS DE CUENTA", account_types_path %></li>
-		<li><%= link_to "CUENTAS", bank_accounts_path %></li>
+		<li><%= link_to "MANAGER", clients_path %></li>
     <li><%= link_to "LOGIN", login_path %></li>
+    <li><%= link_to "SIGN UP", new_user_path %></li>
 	</ul>
   <h1>My Bank<br />
     <span>Tu dinero esta seguro con nosotros, te haremos crecer en grande.</span> </h1>
 </div>
 
-<div class="content">
-<%= yield %>
+<div id="mainmiddlePan">
+  <div id="middlePan">
+    <%= yield %>
+  </div>
 </div>
 
 <div id="footermainPan">

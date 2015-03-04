@@ -17,8 +17,11 @@ MyBank::Application.routes.draw do
     get "stadistics", on: :collection
   end
 
+  resources :users, except: [:index, :destroy]
+
   get "/login" => "sessions#new"#, as: :patito
   post "/login" => "sessions#create"
+  delete "/logout" => "sessions#destroy"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
