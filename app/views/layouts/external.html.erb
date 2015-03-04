@@ -1,14 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
+<<<<<<< HEAD
+    <title>MyBank</title>
+    <%= stylesheet_link_tag    "external", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+=======
   <title>MyBank</title>
   <%= stylesheet_link_tag    "external", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+>>>>>>> d9a1c6ed39619edd0ee92704b4af3a3fa5dc70bc
 </head>
 <body>
 
 <div id="topPan">
+<<<<<<< HEAD
+    <%= image_tag("logo.gif") %>
+    <ul>
+        <li><%= link_to "HOME", root_path %></li>
+        <li><%= link_to "CLIENTES", clients_path %></li>
+        <li><%= link_to "TIPOS DE CUENTA", account_types_path %></li>
+        <li><%= link_to "CUENTAS", bank_accounts_path %></li>
+    </ul>
+    <h1>My Bank<br />
+        <span>Tu dinero esta seguro con nosotros, te haremos crecer en grande.</span> </h1>
+</div>
+
+<div class="content">
+    <%= yield %>
+</div>
+
+<div id="footermainPan">
+    <div id="footerPan">
+        <ul>
+            <li><%= link_to "HOME", root_path %></li>
+            <li><%= link_to "CLIENTES", clients_path %></li>
+            <li><%= link_to "TIPOS DE CUENTA", account_types_path %></li>
+            <li><%= link_to "CUENTAS", bank_accounts_path %></li>
+        </ul>
+        <p class="copyright">©skyhigh industry 2006 all right reaserved</p>
+        <%= image_tag("footerlogo.jpg") %>
+        <div id="footerPanhtml"><a href="http://validator.w3.org/check?uri=referer">html</a></div>
+        <div id="footerPancss"><a href="http://jigsaw.w3.org/css-validator/check/referer">css</a></div>
+        <ul class="templateworld">
+            <li>Design By:</li>
+            <li><a href="http://www.templateworld.com">Template World</a></li>
+        </ul>
+    </div>
+=======
   <%= image_tag("logo.gif") %>
 	<ul>
 		<li><%= link_to "HOME", root_path %></li>
@@ -43,6 +84,7 @@
       <li><a href="http://www.templateworld.com">Template World</a></li>
     </ul>
   </div>
+>>>>>>> d9a1c6ed39619edd0ee92704b4af3a3fa5dc70bc
 </div>
 
 </body>

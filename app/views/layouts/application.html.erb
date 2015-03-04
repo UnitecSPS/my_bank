@@ -8,14 +8,27 @@
 </head>
 <body>
 
+<<<<<<< HEAD
+<div id="topPan">
+	<ul>
+		<li><%= link_to "HOME", root_path %></li>
+		<li><%= link_to "CLIENTES", clients_path %></li>
+    <li><%= link_to "TIPOS DE CUENTA", account_types_path %></li>
+		<li><%= link_to "CUENTAS", bank_accounts_path %></li>
+	</ul>
+</div>
+=======
 <div id="panelwrap">
   <div class="header">
     <div class="title">My Bank Software</div>
+>>>>>>> d9a1c6ed39619edd0ee92704b4af3a3fa5dc70bc
 
     <div class="header_right">
       <%= current_user.try(:email) %>,<%= link_to "Logout", logout_path, method: :delete, class: "logout" %>
     </div>
 
+<<<<<<< HEAD
+=======
     <div class="menu">
     <ul>
       <li><%= link_to "HOME", root_path %></li>
@@ -33,6 +46,7 @@
   Panelo - Free Admin Template by <a href="htpp://csstemplatesmarket.com" target="_blank">CSSTemplatesMarket</a>
   </div>
 </div>
+>>>>>>> d9a1c6ed39619edd0ee92704b4af3a3fa5dc70bc
 
 </body>
 </html>
