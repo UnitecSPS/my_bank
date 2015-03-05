@@ -12,6 +12,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def login(user)
+    session[:user_id] = user.id
+    redirect_to clients_path
+  end
+
   def authenticate
     unless current_user.present?
       redirect_to login_path

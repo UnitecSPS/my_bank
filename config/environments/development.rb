@@ -28,4 +28,14 @@ MyBank::Application.configure do
   config.assets.debug = true
 
   config.facebook_auth_token = "GHGSHAGJSAHFSG"
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'example.com',
+    user_name:            '<username>',
+    password:             '<password>',
+    authentication:       'plain',
+    enable_starttls_auto: true  }
 end

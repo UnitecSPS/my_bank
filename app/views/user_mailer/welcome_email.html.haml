@@ -1,0 +1,11 @@
+%h1 Bienvenido a My Bank
+%p 
+  Estimado
+  %strong= @user.name
+  ha sido seleccionar para poder manejar de una manera responsable y honesta el sistema de My Bank
+%p
+  Tu usuario para poder login sera:
+  %strong= @user.email
+%p
+  Por favor entra a nuestra pagina y pon tus credenciales
+  = link_to "My Bank Software", clients_path

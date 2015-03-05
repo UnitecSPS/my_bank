@@ -4,6 +4,9 @@ class SessionsController < ApplicationController
   skip_before_filter :authenticate 
 
   def new
+    if current_user.present?
+      redirect_to clients_path
+    end
   end
 
   def create
@@ -12,15 +15,11 @@ class SessionsController < ApplicationController
 
     @user = User.find_by_email(email)
 
-    if @user.present?
-      if @user.authenticate(pass)
-        session[:user_id] = @user.id
-        redirect_to clients_path 
-        return
-      end
+    if @user.present? && @user.authenticate(pass)
+      login(@user)
+    else
+      redirect_to login_path, flash: {notice: "User Email or Password is Incorrect"}
     end
-
-    redirect_to login_path, flash: {notice: "User Email or Password is Incorrect"}
   end
 
   def destroy
