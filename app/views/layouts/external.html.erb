@@ -11,7 +11,7 @@
 <div id="topPan">
   <%= image_tag("logo.gif") %>
 	<ul>
-		<li><%= link_to "HOME", root_path %></li>
+		<li><%= link_to "HOME", root_path, onClick: "test();" %></li>
 		<li><%= link_to "MANAGER", clients_path %></li>
     <% if current_user.present? %>
       <li><%= link_to "LOGOUT", logout_path %></li>

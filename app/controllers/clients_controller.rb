@@ -1,6 +1,16 @@
 class ClientsController < ApplicationController
   def index
   	@clients = Client.order(:name)
+
+    if params[:keyword].present?
+      q = params[:keyword]
+      @clients = @clients.where("identity LIKE '%#{q}%' OR  name LIKE '%#{q}%'")
+    end
+
+    if request.xhr?
+      #render json: { keyword: params[:keyword], action: "index" }.to_json, status: 200
+      render partial: "table", locals: {clients: @clients}, status: 200
+    end
   end
 
   def show

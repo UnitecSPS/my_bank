@@ -14,3 +14,25 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+  $(".js_add_new_client").on("click", function(e){
+    alert("JAJA cancele el postback")
+  });
+
+  $(".js_filter_form").on("ajax:success", function(e, data, status, xhr){
+    //alert(data);
+    //alert(data["action"])
+    //alert(xhr.responseText);
+    //alert("Se filtro!");
+    $(".js_filtered_table").html(data)
+  });
+
+  $(".js_filter_form").on("ajax:error", function(e, xhr, status, error){
+    alert(error);
+  });
+
+  $("#keyword").on("keyup", function(e){
+    $(".js_filter_form").submit(); 
+  });
+});

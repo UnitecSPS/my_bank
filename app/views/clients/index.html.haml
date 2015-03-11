@@ -9,14 +9,15 @@
         .notice= flash[:notice]
 
       - if @clients.any?
-        %table{id:"rounded-corner",border: "1"}
-          %thead
-            %tr
-              %th Identidad
-              %th Nombre
-              %th Cantidad de Cuentas
-          %tbody
-            = render @clients
+        .form
+          = form_tag clients_path, class: "js_filter_form", remote: true, method: :get do
+            .form_row
+              = text_field_tag :keyword, nil, placeholder: "Ingrese una palabra a buscar", class: "form_input"
+            .form_row
+              = submit_tag "Filtrar", class: "form_submit"
+
+        .js_filtered_table
+          = render partial: "table", locals: {clients: @clients}
       - else
         %em No Hay ningun cliente agredo
   .sidebar{id: "sidebar"}
