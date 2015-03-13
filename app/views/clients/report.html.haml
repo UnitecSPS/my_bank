@@ -1,0 +1,15 @@
+= render "submenu"
+
+.center_content
+  #right_wrap
+    #right_content
+      %h2 Reporte de Transacciones
+
+      #graph_container{ data: { graph_data: @client.graph_data } }
+
+  .sidebar{id: "sidebar"}
+    %h2 Reporte
+    .sidebar_section_text Reporte del total de retiros y depositos que has hecho en tu cuenta.
+    = render "sidebar_menu"
+
+  .clear

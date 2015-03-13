@@ -48,7 +48,10 @@ class ClientsController < ApplicationController
   end
 
   def hackaccounts
-    reset_session
+    @client = Client.find(params[:id])
+  end
+
+  def report
     @client = Client.find(params[:id])
   end
 
