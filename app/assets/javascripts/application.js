@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require highcharts
 //= require_tree .
 
 $(document).ready(function(){
@@ -33,6 +34,51 @@ $(document).ready(function(){
   });
 
   $("#keyword").on("keyup", function(e){
-    $(".js_filter_form").submit(); 
+    $(".js_filter_form").submit();
   });
+
+  function build_graph(){
+    deposit_count = parseInt($("#graph_container").data("deposit"));
+    retire_count = parseInt($("#graph_container").data("retire"));
+
+    chart1 = new Highcharts.Chart({
+      chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false,
+            renderTo: "graph_container"
+        },
+        title: {
+            text: 'Browser market shares at a specific website, 2014'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Browser share',
+            data: [
+                ['Deposito',   deposit_count],
+                ['Retiro',       retire_count]
+            ]
+        }]
+    });
+  }
+
+  if($("#graph_container").length > 0){
+    build_graph();
+  }
 });

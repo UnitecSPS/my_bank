@@ -7,6 +7,7 @@ MyBank::Application.routes.draw do
 
   resources :clients do
     get "hackaccounts", on: :member
+    get 'report', on: :member
   end
   resources :account_types, except: [:show, :destroy]
 

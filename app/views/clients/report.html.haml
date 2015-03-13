@@ -1,0 +1,15 @@
+= render "submenu"
+
+.center_content
+  #right_wrap
+    #right_content
+      %h2 Reporte de Transacciones
+
+      #graph_container{data: @client.build_transactions_report}
+
+  .sidebar{id: "sidebar"}
+    %h2 Reporte
+    .sidebar_section_text Mira como has movido tu dinero entre todas tus cuentas bancarias que posees con nuestro prestigioso banco.
+    = render "sidebar_menu"
+
+  .clear
