@@ -14,11 +14,14 @@ class Client < ActiveRecord::Base
     deposits = self.transactions.where(transaction_type: "deposit").count
     retires = self.transactions.where(transaction_type: "retire").count
 
-    { 
-      total: total,
-      deposits: deposits.fdiv(total).round(2) * 100,
-      retires: retires.fdiv(total).round(2) * 100
-    }.to_json
-
+    #{ 
+     # total: total,
+      #deposits: deposits.fdiv(total).round(2) * 100,
+      #retires: retires.fdiv(total).round(2) * 100
+    #}.to_json
+    [
+      ["Depositos", deposits.fdiv(total).round(2) * 100],
+      ["Retiros",retires.fdiv(total).round(2) * 100]
+      ].to_json
   end
 end

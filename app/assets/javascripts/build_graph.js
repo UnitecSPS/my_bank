@@ -31,10 +31,7 @@ $(document).on("ready page:load", function(){
           series: [{
               type: 'pie',
               name: 'Transaccion',
-              data: [
-                  ['Deposito',   graphData.deposits],
-                  ['Retiro',       graphData.retires]
-              ]
+              data: graphData
           }]
       });
     }
