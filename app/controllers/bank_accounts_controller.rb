@@ -1,6 +1,16 @@
 class BankAccountsController < ApplicationController
   def index
-    @bank_accounts = BankAccount.order(:created_at)
+    @bank_accounts = BankAccount.includes(:client, :account_type).order(:created_at)
+  
+    if params[:keyword].present?
+      q = params[:keyword]
+      @bank_accounts = @bank_accounts.joins(:client, :account_type)
+        .where("bank_accounts.id LIKE '%#{q}%' OR clients.name LIKE '%#{q}%' OR account_types.title LIKE '%#{q}%'")
+    end
+
+    if request.xhr?
+      render partial: "table", locals: {bank_accounts: @bank_accounts}
+    end
   end
 
   def show

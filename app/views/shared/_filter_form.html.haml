@@ -1,0 +1,6 @@
+.form
+  = form_tag form_path, class: "js_filter_form", remote: true, method: :get do
+    .form_row
+      = text_field_tag :keyword, nil, placeholder: "Ingrese una palabra a buscar", class: "form_input"
+    .form_row
+      = submit_tag "Filtrar", class: "form_submit"

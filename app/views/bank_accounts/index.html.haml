@@ -9,15 +9,10 @@
         .notice= flash[:notice]
 
       - if @bank_accounts.any?
-        %table{id:"rounded-corner",border: "1"}
-          %thead
-            %tr
-              %th ID
-              %th Cliente
-              %th Saldo
-              %th Tipo
-          %tbody
-            = render @bank_accounts
+        = render partial: "shared/filter_form", locals: {form_path: bank_accounts_path}
+
+        .js_filtered_table
+          = render partial: "table", locals: {bank_accounts: @bank_accounts}
       - else
         %em No Hay ninguna cuenta bancaria agregada
   .sidebar{id: "sidebar"}

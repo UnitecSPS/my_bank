@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
-$(document).ready(function(){
+$(document).on("ready page:load", function(){
   $(".js_add_new_client").on("click", function(e){
     alert("JAJA cancele el postback")
   });
