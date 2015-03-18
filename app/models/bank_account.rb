@@ -37,19 +37,19 @@ class BankAccount < ActiveRecord::Base
   private
 
     def call_before_safe
-      puts "Se llamo el before Save"
+      #puts "Se llamo el before Save"
     end
 
     def set_default_balance
-      puts "Se llamo el before_create"
+      #puts "Se llamo el before_create"
       self.balance = self.account_type.min_deposit
     end
 
     def call_after_save
-      puts "Se llam el after save"
+      #puts "Se llam el after save"
     end
 
     def call_after_create
-      puts "Se llamo el after create"
+      #puts "Se llamo el after create"
     end
 end
