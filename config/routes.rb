@@ -16,6 +16,7 @@ MyBank::Application.routes.draw do
     get "deposit" => "transactions#new", on: :member
     get "retire"=> "transactions#new", on: :member
     get "stadistics", on: :collection
+    post "intereses", on: :collection
   end
 
   resources :users, except: [:index, :destroy]

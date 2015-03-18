@@ -49,6 +49,13 @@ class BankAccountsController < ApplicationController
     @transaction = Transaction.new(transaction_type: "retire")
   end
 
+  def intereses
+    BankAccount.order(:id).each do |bk|
+      bk.deposit(bk.balance*bk.account_type.rate)
+    end
+    redirect_to bank_accounts_path
+  end
+
   private
 
     def bank_account_params
