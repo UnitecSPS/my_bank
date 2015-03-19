@@ -4,16 +4,16 @@ describe "Procesos sobre cuentas bancarias" do
   
   before(:each) do
     @user = FactoryGirl.create(:user, email: "yo@unitec.edu")
+    @account = FactoryGirl.create(:bank_account)
     visit login_path
     fill_in "session_email", with: @user.email
     fill_in "session_password", with: "unitec"
     click_button "Login"
   end
-
+  
   context "Index page" do
 
     before(:each) do
-      @account = FactoryGirl.create(:bank_account)
       visit bank_accounts_path
     end
 
@@ -32,6 +32,36 @@ describe "Procesos sobre cuentas bancarias" do
       #500 + 500 * 0,4 = 700
       expect(page).to have_content(700)
       expect(current_path).to eq(bank_accounts_path)
+    end
+  end
+
+  context "Show Page" do
+    before(:each) do
+      visit bank_account_path(@account)
+    end
+
+    it "muestra los datos de la bank account" do
+      expect(page).to have_content("Carlos Gochez")
+      expect(page).to have_content("VIP")
+      expect(page).to have_content(500)
+    end
+
+    it "puede llamar la opcion de depositar" do
+      click_link "Depositar"
+      fill_in "transaction_responsible", with: "Patito"
+      fill_in "transaction_amount", with: 500
+      click_button "Depositar"
+      expect(current_path).to eq(bank_account_path(@account))
+      expect(page).to have_content(1000)
+    end
+
+    it "puede llamar la opcion de retirar" do
+      click_link "Retirar"
+      fill_in "transaction_responsible", with: "Patito"
+      fill_in "transaction_amount", with: 300
+      click_button "Retirar"
+      expect(current_path).to eq(bank_account_path(@account))
+      expect(page).to have_content(200)
     end
   end
 end
