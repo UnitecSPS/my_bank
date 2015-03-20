@@ -4,4 +4,10 @@ FactoryGirl.define do
     rate 0.4
     min_deposit 500
   end
+
+  factory :normal, class: AccountType do
+    title "NORMAL"
+    rate 0.2
+    min_deposit 100
+  end
 end

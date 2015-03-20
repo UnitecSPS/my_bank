@@ -16,7 +16,7 @@ class Transaction < ActiveRecord::Base
       end
     end
 
-    bank_updated && save
+    bank_updated && save && self.bank_account.save
   end
 
   def decorate_amount

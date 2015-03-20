@@ -11,6 +11,7 @@ describe BankAccountsController do
     account = FactoryGirl.create(:bank_account)
     get :show, {id: account.id}, user_id: @user.id
     expect(response).to be_success
+    expect(response.status).to eq(200)
   end
 
   it "despliega un error si el id no existe" do

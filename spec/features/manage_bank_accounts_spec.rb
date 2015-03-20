@@ -64,4 +64,26 @@ describe "Procesos sobre cuentas bancarias" do
       expect(page).to have_content(200)
     end
   end
+
+  context "new" do
+    before(:each) do
+      FactoryGirl.create(:vip)
+      FactoryGirl.create(:normal)
+      FactoryGirl.create(:client)
+      FactoryGirl.create(:client, name: "David Bermudez")
+    end
+
+    it "puede crear una nueva cuenta" do
+      visit bank_accounts_path
+      click_link "Nueva Cuenta"
+      select "David Bermudez", from: "bank_account_client_id"
+      select "NORMAL", from: "bank_account_account_type_id"
+      select "Dolares", from: "bank_account_currency"
+      click_button "Create Bank account"
+      expect(current_path).to eq(bank_accounts_path)
+      expect(page).to have_content("Cuenta creado exitosamente")
+      expect(page).to have_content("David Bermudez")
+      expect(page).to have_content("NORMAL")
+    end
+  end
 end

@@ -51,7 +51,9 @@ class BankAccountsController < ApplicationController
 
   def intereses
     BankAccount.order(:id).each do |bk|
-      bk.deposit(bk.balance*bk.account_type.rate)
+      if( bk.deposit(bk.balance*bk.account_type.rate) )
+        bk.save
+      end
     end
     redirect_to bank_accounts_path
   end

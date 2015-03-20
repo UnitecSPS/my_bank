@@ -19,7 +19,7 @@ class BankAccount < ActiveRecord::Base
   def deposit(amount)
     if amount.present?
       self.balance += amount
-      save
+      true
     else
       false
     end
@@ -28,7 +28,7 @@ class BankAccount < ActiveRecord::Base
   def retire(amount)
     if amount.present? && self.balance > amount
       self.balance -= amount
-      save
+      true
     else
       false
     end
