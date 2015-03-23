@@ -1,11 +1,11 @@
 /* CSS Document */
-body{margin:0; padding:0; background:url(/assets/mainbg.gif) 0 0 repeat-x #fff; font:14px/18px Georgia, "Times New Roman", Times, serif; color:#666;}
+body{margin:0; padding:0; background:image-url("mainbg.gif") 0 0 repeat-x #fff; font:14px/18px Georgia, "Times New Roman", Times, serif; color:#666;}
 div, p, ul, h1, h2, h3, h4, form{margin:0px; padding:0px;}
 ul{list-style-type:none;}
 
 /*--Top Panel--*/
 #topPan{width:708px; height:399px; position:relative; margin:0 auto; padding:0;}
-#topPan h1{width:172px; height:165px; position:absolute; top:113px; left:0px; display:block; background:url(/assets/header.jpg) 0 0 no-repeat #FEFFFE; font:24px/18px "Trebuchet MS",Arial, Helvetica, sans-serif; color:#fff; padding:65px 86px 0 450px; font-weight:normal;}
+#topPan h1{width:172px; height:165px; position:absolute; top:113px; left:0px; display:block; background:image-url("header.jpg") 0 0 no-repeat #FEFFFE; font:24px/18px "Trebuchet MS",Arial, Helvetica, sans-serif; color:#fff; padding:65px 86px 0 450px; font-weight:normal;}
 #topPan h1 span{font-size:14px;}
 
 #topPan img{width:245px; height:39px; display:block; position:absolute; top:69px; left:0px;}
@@ -24,7 +24,7 @@ ul{list-style-type:none;}
 /*--left panel--*/
 #middleleftPan{width:475px; float:left;}
 #middleleftPan h2{width:260px; height:77px; background:url(/assets/icon1.jpg) 0 50% no-repeat #F0F0F0; color:#D67200; font:26px/77px Arial, Helvetica, sans-serif; padding:0 0 0 60px;}
-#middleleftPan p{padding:10px 72px 0 0;} 
+#middleleftPan p{padding:10px 72px 0 0;}
 #middleleftPan p span.boldtext{font-weight:bold;}
 #middleleftPan p.more{width:118px; height:24px; margin:20px 0 0 284px; padding:0;}
 #middleleftPan p.more a{width:100px; height:24px; display:block; background:url(/assets/icon5.jpg) 0 0 no-repeat #F0F0F0; color:#966202; font:16px/24px "Trebuchet MS", Arial, Helvetica, sans-serif; padding:0 0 0 30px; text-decoration:none;}
@@ -55,7 +55,7 @@ ul{list-style-type:none;}
 #bottommiddlePan{width:708px; float:left; margin:41px 0; background:url(/assets/middleborder.gif) 0 0 repeat-y;}
 /*--Bottom Left Panel--*/
 #bottomleftPan{width:354px; float:left;}
-#bottomleftPan p{padding:10px 72px 0 0;} 
+#bottomleftPan p{padding:10px 72px 0 0;}
 #bottomleftPan p span.boldtext{font-weight:bold;}
 
 #bottomleftPan p.more{width:118px; height:24px; margin:20px 0 0 186px; padding:0;}
@@ -70,7 +70,7 @@ ul{list-style-type:none;}
 /*--/Bottom Left Panel--*/
 /*--Bottom Right Panel--*/
 #bottomrightPan{width:354px; float:left;}
-#bottomrightPan p{padding:10px 2px 0 60px;} 
+#bottomrightPan p{padding:10px 2px 0 60px;}
 #bottomrightPan p span.boldtext{font-weight:bold;}
 
 #bottomrightPan p.more{width:80px; height:24px; margin:20px 0 0 238px; padding:0;}
